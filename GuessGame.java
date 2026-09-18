@@ -12,12 +12,13 @@ class Game{
     }
      Game(){
         Random r = new Random();
-        this.number = r.nextInt(100);
+        this.number = r.nextInt(100)+1;
     }
     void takeNumber(){
         Scanner sc = new Scanner (System.in);
         System.out.println("...............Enter the number of your choice................\n");
          inputNumber = sc.nextInt();
+         numberOfGuesses++;
     }
     boolean isCorrectNumber(){
         if( inputNumber == number){
@@ -41,7 +42,7 @@ public class GuessGame {
         while(!d) {
             s.takeNumber();
             d = s.isCorrectNumber();
-            System.out.println(d);
         }
+        System.out.println("You guessed the number in " + s.getnumberOfGuesses() + " guesses.");
     }
 }
